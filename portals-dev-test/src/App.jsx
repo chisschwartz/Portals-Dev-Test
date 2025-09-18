@@ -3,6 +3,7 @@ import './App.css'
 import CustomerData from "./Components/CustomerData";
 import CustomerTrans from './Components/CustomerTrans';
 import Banner from './Components/Banner';
+import CustomerButton from './Components/CustomerButton';
 
 function App() {
   const [transaction, setTransaction] = useState(CustomerData)
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
     <Banner />
+    <CustomerButton />
     <CustomerTrans transaction={transaction}/>
   
     </>
