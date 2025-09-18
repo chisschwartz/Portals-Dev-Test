@@ -1,6 +1,7 @@
-// import customerMath from "./customerMath";
+import CustomerMath from "./CustomerMath";
 
 const CustomerTrans = ({ transaction }) => {
+
     return(
         <table>
             <thead>
@@ -15,7 +16,8 @@ const CustomerTrans = ({ transaction }) => {
                     <tr key={id}>
                         <>
                             <td>{data.name}</td>
-                            <td>{data.transactions}</td>
+                            <td>{data.transactions[0]}</td>
+                            <td>{CustomerMath(120)}</td>
                         </>
                     </tr>
                 ))};
