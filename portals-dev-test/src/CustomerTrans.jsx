@@ -2,6 +2,9 @@ import CustomerMath from "./CustomerMath";
 
 const CustomerTrans = ({ transaction }) => {
 
+    const months = ["Jan", "Feb", "March", "April", "May", "June", 
+                    "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+
     return(
         <table>
             <thead>
@@ -16,8 +19,8 @@ const CustomerTrans = ({ transaction }) => {
                     <tr key={id}>
                         <>
                             <td>{data.name}</td>
-                            <td>{data.transactions[0]}</td>
-                            <td>{CustomerMath(120)}</td>
+                            <td>{data.march[0]}</td>
+                            <td>{CustomerMath(data.march[0])}</td>
                         </>
                     </tr>
                 ))};
