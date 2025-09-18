@@ -5,17 +5,17 @@ function CustomerMath(amountSpent) {
     if (amountSpent > 100){
 
         bonusPoints = amountSpent - 100;
-        points = (bonusPoints * 2) + 50;
+        points += (bonusPoints * 2) + 50;
     }
     
     if (amountSpent >= 50 && amountSpent <= 100) {
 
-        points = (amountSpent -  50);
+        points += (amountSpent -  50);
     } 
 
     if(amountSpent < 50) {
 
-        points = 0;
+        points += 0;
     }
 
     return points;

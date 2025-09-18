@@ -19,8 +19,8 @@ const CustomerTrans = ({ transaction }) => {
                     <tr key={id}>
                         <>
                             <td>{data.name}</td>
-                            <td>{data.march[0]}</td>
-                            <td>{CustomerMath(data.march[0])}</td>
+                            <td>{data.jan[0]}</td>
+                            <td>{CustomerMath(data.jan[0])}</td>
                         </>
                     </tr>
                 ))};
