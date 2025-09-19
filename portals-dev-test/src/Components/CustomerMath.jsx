@@ -1,7 +1,7 @@
 function CustomerMath(amountSpent) {
     var bonusPoints = 0;
     var points = 0;
-    // var totalPoints = 0;
+    var totalPoints = 0;
     var monthlyPoints = [];
 
     //store each point total from each loop and call them in table to display for each month
@@ -12,6 +12,8 @@ function CustomerMath(amountSpent) {
     //maybe instead of passing through points we pass through i from loop?
     //or loop inside our math function?
     //maybe months should also be here?
+
+    //key value pair month and point?
 
     if (amountSpent > 100){
 
@@ -33,9 +35,12 @@ function CustomerMath(amountSpent) {
 
     return points;
 
-    // function customerTotal(points) {
+    function customerTotal(monthlyPoints) {
 
-    // }
+        totalPoints = monthlyPoints[0] + monthlyPoints[1] + monthlyPoints[2];
+
+        return totalPoints;
+    }
 }
 
 export default CustomerMath;
