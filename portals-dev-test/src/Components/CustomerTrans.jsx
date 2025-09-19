@@ -15,13 +15,13 @@ const CustomerTrans = ({ transaction }) => {
                 </tr>
             </thead>
             <tbody>
-                {transaction.map((data, id) => (
-                    <tr key={id}> 
+                {transaction.map((data) => (
+                    <tr> 
                         <>
                             <td>{data.name}</td>
-                            <td>{data.jan[0]}</td>
-                            <td>{CustomerMath(data.jan[0])}</td>
-                            <td>{CustomerMath(data.jan[0])}</td>
+                            <td>{data.jan[4]}</td>
+                            <td>{CustomerMath(data.jan[4])}</td>
+                            <td>{CustomerMath(data.jan[4])}</td>
                         </>
                     </tr>
                     //need to loop through data so that the transactions from each month are applied and caculated into the total
