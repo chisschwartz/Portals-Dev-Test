@@ -1,5 +1,7 @@
 import CustomerMath from "./CustomerMath";
 
+//probably move logic over to button side and have this table filled out dynamically
+
 const CustomerTrans = ({ transaction }) => {
 
     return(
