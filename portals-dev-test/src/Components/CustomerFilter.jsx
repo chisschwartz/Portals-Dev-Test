@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import CustomerMath from "./CustomerMath";
   
   function CustomerFilter() {
     const [filter, setFilter] = useState('');
@@ -41,12 +42,10 @@ import { useState } from "react";
                 oct: [49, 56],
                 nov:[600],
                 dec:[700]
-
-                
             }
         },
     ];
-  
+
     const filteredProducts = custData.filter((cust) =>
       cust.username.toLowerCase().includes(filter.toLowerCase())
     );
@@ -54,20 +53,37 @@ import { useState } from "react";
     const ListOfTrans = (custData) => {
         return custData.map((trans) => <li key={custData.index}>{trans}</li>)
     }
+
+    const janMath = (custData) => {
+        return custData.map((trans) => <li key={custData.id}>{CustomerMath(trans)}</li>)
+    }
   
     return (
       <div className="filter">
-        <h1>Please Enter Username</h1>
+        <h2>Please Enter Username:</h2>
         <input
           type="text"
           placeholder="Enter Username"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
         />
-        <ul>
-          {filteredProducts.map((cust) => (
-            <li key={cust.id}>{cust.name} {cust.username} 
-            <ul> <ul>January: {ListOfTrans(cust.month.jan)}</ul> 
+            <table>
+            <thead>
+             <tr>
+               <th>Name</th>
+               <th>Username</th>
+               <th>Monthly Transactions</th>
+               <th>Total Points</th>
+               <th></th>
+             </tr>
+             </thead>
+             </table>
+             <tbody>
+             {filteredProducts.map((cust) => (
+            <tr key={cust.id}>
+            <td>{cust.name}</td>
+            <td>{cust.username}</td>
+            <td><ul>January: {ListOfTrans(cust.month.jan)}</ul> 
             <ul>February: {ListOfTrans(cust.month.feb)}</ul> 
             <ul> March: {ListOfTrans(cust.month.march)}</ul>
             <ul>April: {ListOfTrans(cust.month.april)}</ul>
@@ -78,9 +94,12 @@ import { useState } from "react";
             <ul>September: {ListOfTrans(cust.month.sept)}</ul> 
             <ul>October: {ListOfTrans(cust.month.oct)}</ul> 
             <ul>November: {ListOfTrans(cust.month.nov)}</ul> 
-            <ul>December: {ListOfTrans(cust.month.dec)}</ul></ul></li>
-          ))}
-        </ul>
+            <ul>December: {ListOfTrans(cust.month.dec)}</ul></td>
+            <td>{janMath(cust.month.jan)}</td>
+            </tr>
+            ))}
+
+             </tbody>
       </div>
     );
   }

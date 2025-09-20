@@ -6,13 +6,12 @@ import CustomerMath from "./CustomerMath";
 
 const CustomerTrans = ({ customers }) => {
 
-    let points = [];
-    for (let i=0; i < custData.jan; i++) {
-        points.push(CustomerMath(custData.jan[i]));
-    }
-
     const ListOfTrans = (customer) => {
         return customer.map((trans) => <li key={customer.index}>{trans}</li>)
+    }
+
+    const janMath = (customer) => {
+        return customer.map((trans) => <li key={customer.id}>{CustomerMath(trans)}</li>)
     }
 
     
@@ -35,6 +34,7 @@ const CustomerTrans = ({ customers }) => {
                <td><ul>
                 {[ListOfTrans(data.month.jan), ListOfTrans(data.month.feb), ListOfTrans(data.month.march)]}
                </ul></td>
+               <td><ul>{janMath(data.month.jan)}</ul></td>
                </>
              </tr>
             ))};
