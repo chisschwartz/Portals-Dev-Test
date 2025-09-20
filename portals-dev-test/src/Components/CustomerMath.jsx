@@ -1,3 +1,5 @@
+
+
 function CustomerMath(amountSpent) {
     var bonusPoints = 0;
     var points = 0;
