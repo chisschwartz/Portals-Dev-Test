@@ -16,10 +16,6 @@ function App() {
     <div>
     <Banner />
     {/* <CustomerFilter/> */}
-    {/* <CustomerButton
-      filterByCust={filterByCust}
-      setCustomers={setCustomers}
-      displayCust={displayCust} /> */}
     <CustomerTrans 
     customers={customers}
     />
